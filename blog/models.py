@@ -9,7 +9,7 @@ class Blog(models.Model):
     content = models.TextField()
 
     def __str__(self):
-        return self.title
+        return f"{self.title} ({self.date})"
 
 class Mentor(models.Model):
     name = models.CharField(max_length=200)
@@ -19,7 +19,7 @@ class Mentor(models.Model):
     photo = models.CharField('url for photo', max_length=1000)
 
     def __str__(self):
-        return self.name
+        return f"{self.name} ({self.title})"
 
 class Mentee(models.Model):
     name = models.CharField(max_length=200)
@@ -28,4 +28,4 @@ class Mentee(models.Model):
     photo = models.CharField('url for photo', max_length=1000)
 
     def __str__(self):
-        return self.name
+        return f"{self.name} ({self.age})"
